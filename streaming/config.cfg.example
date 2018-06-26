@@ -4,3 +4,6 @@ ClientSecret = your client secret
 UserAgent = your user agent
 Username = your user name
 Password = your password
+
+[REDDIT]
+Subreddit = politics
