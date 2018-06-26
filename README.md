@@ -6,4 +6,8 @@ To retrieve Reddit comments, rename `config.cfg.example` to `config.cfg` and add
 necessary credentials and configuration. Use `environment.yml` to install
 the required Python packages.
 
-Run `python streaming/reddit.py` to consume the Reddit stream.
+Run the script to consume the Reddit comment stream:
+
+```sh
+$ python streaming/reddit.py
+```
