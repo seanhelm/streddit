@@ -20,6 +20,9 @@ Run the script to consume the Reddit comment stream:
 python reddit.py
 ```
 
+This will process real-time comments and use sentiment analysis to store negative
+comments in a MongoDB collection.
+
 ## API
 
 To start the API, change to the `api` directory and install the API 
@@ -30,3 +33,5 @@ Once installed, run the API:
 ```sh
 node app.js
 ```
+
+The API will make it easy to perform CRUD operations on the collection of Reddit comments.
