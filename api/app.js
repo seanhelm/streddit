@@ -14,6 +14,6 @@ app.use(bodyParser.json())
 
 // Include routes for app
 var comments = require('./routes/commentsRouter')
-app.use('api/comments', comments)
+app.use('/comments', comments)
 
 app.listen(3000)
