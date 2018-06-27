@@ -1,7 +1,5 @@
-'use strict'
-
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
 // Schema for comment JSON
 var CommentSchema = new Schema({
@@ -12,6 +10,6 @@ var CommentSchema = new Schema({
     body: String,
     created: Date,
     polarity: Number
-});
+})
 
-module.exports = mongoose.model('Comment', CommentSchema);
+module.exports = mongoose.model('Comment', CommentSchema)

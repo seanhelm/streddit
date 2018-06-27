@@ -1,34 +1,35 @@
-'use strict'
-
-var mongoose = require('mongoose'),
-    Comment = mongoose.model('Comment');
+var mongoose = require('mongoose')
+var Comment = mongoose.model('Comment')
 
 // Retrieve all comments from mongo
-exports.get_all_comments = function (req, res) {
+exports.get_all_comments = function (req, res, next) {
     Comment.find({}, function (err, comment) {
         if (err) {
-            res.send(err);
+            next(err)
+        } else {
+            res.json(comment)
         }
-        res.json(comment);
-    });
-};
+    })
+}
 
 // Retrieve specific comment by id from mongo
-exports.get_comment = function (req, res) {
+exports.get_comment = function (req, res, next) {
     Comment.findById(req.params.commentId, function (err, comment) {
         if (err) {
-            res.send(err);
+            next(err)
+        } else {
+            res.json(comment)
         }
-        res.json(comment);
     })
 }
 
 // Delete specific comment by id from mongo
-exports.delete_comment = function (req, res) {
-    Comment.remove({_id: req.params.commentId}, function (err, comment) {
+exports.delete_comment = function (req, res, next) {
+    Comment.findByIdAndDelete(req.params.commentId, function (err, comment) {
         if (err) {
-            res.send(err);
+            next(err)
+        } else {
+            res.json(comment)
         }
-        res.json('Deleted comment with id ' + req.params.commentId);
     })
 }
