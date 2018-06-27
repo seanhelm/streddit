@@ -1,3 +1,6 @@
+[MONGODB]
+Host = localhost:27017
+
 [CREDENTIALS]
 ClientID = your client id
 ClientSecret = your client secret
@@ -6,4 +9,5 @@ Username = your user name
 Password = your password
 
 [REDDIT]
-Subreddit = politics
+Subreddit = leagueoflegends
+MaxPolarity = -0.2
