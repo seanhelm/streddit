@@ -20,9 +20,9 @@ Run the script to consume the Reddit comment stream:
 python reddit.py
 ```
 
-## Server
+## API
 
-To run the rest API using Express, change to the `app` directory. Install the app 
+To start the API, change to the `api` directory and install the API 
 using `npm install`.
 
 Once installed, run the API:
