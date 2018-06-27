@@ -1,6 +1,16 @@
-const express = require('express')
-const app = express()
+var express = require('express'),
+    app = express(),
+    mongoose = require('mongoose'),
+    Comment = require('./models/commentsModel'),
+    bodyParser = require('body-parser');
 
-app.get('/', (req, res) => res.send('Hello World!'))
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/streddit');
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+var routes = require('./routes/commentsRouter');
+routes(app);
+
+app.listen(3000, () => console.log('Listening on port 3000!'));

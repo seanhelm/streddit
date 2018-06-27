@@ -39,7 +39,8 @@ def process_comment(comment, collection, max_polarity):
         comment_dict = {key: comment.__dict__[key] for key in other_keys}
         comment_dict.update(author=comment.author.name,
                             subreddit=comment.author.name,
-                            created=datetime.utcfromtimestamp(comment.created_utc),
+                            created=datetime.utcfromtimestamp(
+                                comment.created_utc),
                             body=body_plain,
                             polarity=blob.sentiment[0])
 
