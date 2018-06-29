@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ListComments/>
+      <ListComments/ >
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import ListComments from './components/ListComments'
 export default {
   name: 'App',
   components: {
-    ListComments
+      ListComments
   }
 }
 </script>
