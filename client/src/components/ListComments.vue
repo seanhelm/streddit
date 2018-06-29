@@ -1,20 +1,16 @@
 <template>
     <div id="comments">
         <h3 class="title is-3">Review negative Reddit comments</h3>
-        <article class="message" v-for="comment in comments">
-            <div class="message-header">
-               <p>{{ comment.author }}</p>
-               <button class="delete" aria-label="delete"></button>
-            </div>
-            <div class="message-body">
-                {{ comment.body }}
-            </div>
-        </article>
+        <Comment v-for="comment in comments" 
+            :key="comment._id"
+            :body="comment.body"
+            :author="comment.author" />
     </div>
 </template>
 
 <script>
 import axios from 'axios'
+import Comment from './Comment'
 
 export default {
     name: 'ListComments',
@@ -22,6 +18,9 @@ export default {
         return {
             comments: null
         }
+    },
+    components: {
+        Comment
     },
     mounted () {
         axios.get("http://localhost:3000/comments/")
