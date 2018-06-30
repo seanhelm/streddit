@@ -20,7 +20,7 @@ export default {
     };
   },
   components: {
-    comment
+    Comment
   },
   mounted() {
     axios

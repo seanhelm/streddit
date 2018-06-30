@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ListComments/ >
+    <ListComments/>
   </div>
 </template>
 

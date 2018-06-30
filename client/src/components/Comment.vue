@@ -5,8 +5,8 @@
       <button class="delete" aria-label="delete"></button>
     </div>
     <div class="message-body">
-        {{ body }}
-      </div>
+      {{ body }}
+    </div>
   </article>
 </template>
 
