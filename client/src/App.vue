@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-      <ListComments/ >
+    <ListComments/ >
   </div>
 </template>
 
 <script>
-import ListComments from './components/ListComments'
+import ListComments from "./components/ListComments";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-      ListComments
+    ListComments
   }
-}
+};
 </script>
