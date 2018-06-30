@@ -30,15 +30,15 @@ export default {
     deleteComment (index) {
       axios
         .delete("http://localhost:3000/comments/" + this.comments[index]._id)
-        .then(response => (console.log("Deleted comment.")))
+        .then(response => (console.log("Deleted comment.")));
 
-      this.comments.splice(index, 1)
+      this.comments.splice(index, 1);
     }
   },
   mounted() {
     axios
       .get("http://localhost:3000/comments/")
-      .then(response => (this.comments = response.data))
+      .then(response => (this.comments = response.data));
   }
 };
 </script>
