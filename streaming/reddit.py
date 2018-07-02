@@ -33,7 +33,7 @@ def process_comment(comment, collection, max_polarity):
     blob = TextBlob(body_plain)
 
     # If comment is suspicious
-    if blob.sentiment[0] <= -0.2:
+    if blob.sentiment[0] <= max_polarity:
         # Extract necessary information from reddit comment
         other_keys = ['permalink', 'subreddit', 'link_title']
         comment_dict = {key: comment.__dict__[key] for key in other_keys}
@@ -69,6 +69,7 @@ if __name__ == '__main__':
     subreddit = reddit.subreddit(config['REDDIT']['Subreddit'])
     print("Consuming Reddit stream from r/%s..." % subreddit)
 
-    # S
+    max_polarity = float(config['REDDIT']['MaxPolarity'])
+
     for comment in subreddit.stream.comments():
-        process_comment(comment, coll, config['REDDIT']['MaxPolarity'])
+        process_comment(comment, coll, max_polarity)
