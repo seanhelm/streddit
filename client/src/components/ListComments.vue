@@ -1,18 +1,32 @@
 <template>
   <div id="listComments">
-    <h3 class="title is-3">Review negative Reddit comments:</h3>
+    <h1 class="title">Reddit Sentiment Analysis</h1>
+    <h2 class="subtitle">Review negative Reddit comments in real-time</h2>
 
-    <article v-for="(comment, index) in comments" class="message">
-      <div class="message-header">
-        <p>{{ comment.author }}</p>
-        
-        <button @click="deleteComment(index)" class="delete" aria-label="delete"></button>
+    <div class="columns is-multiline">
+      <div v-for="(comment, index) in comments" class="column is-half">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              {{ comment.author }}
+            </p>
+          </header>
+          <div class="card-content">
+            <p>
+              {{ comment.body }}
+            </p>
+            <i>
+              {{ new Date(comment.created).toLocaleTimeString() }} - {{ new Date(comment.created).toLocaleDateString() }}
+            </i>
+          </div>
+          <footer class="card-footer">
+            <a :href="'http://reddit.com/' + comment.permalink" class="card-footer-item">Permalink</a>
+            <a @click="deleteComment(index)" class="card-footer-item">Delete</a>
+          </footer>
+        </div>
       </div>
-      
-      <div class="message-body">
-        {{ comment.body }}
-      </div>
-    </article>
+    </div>
+  
   </div>
 </template>
 
