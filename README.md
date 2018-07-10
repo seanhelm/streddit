@@ -1,5 +1,7 @@
 # streddit
 
+![Screenshot](images/screenshot.png)
+
 ## Prerequisites
 
 Make sure the following are installed:
